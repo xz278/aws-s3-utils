@@ -14,7 +14,7 @@ from aws_utils import s3_utils as s3
 s3_client = s3.get_client()
 
 # list all buckets available in current s3 account
-buckets = 3_client.list_bucket()
+buckets = s3_client.list_bucket()
 
 # list all object in one bucket
 objects = s3_client.list_object(
