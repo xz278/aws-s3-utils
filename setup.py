@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='aws-utils',
-    version='1.0.0',
+    version='1.0.1',
     description='AWS Utils',
     url='https://github.com/xz278/aws-utils.git',
     author='Xian Zhang',

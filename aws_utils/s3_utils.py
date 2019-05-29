@@ -50,7 +50,10 @@ class Client:
                                             reg_match=r'.*/MCR.LOAN.REP.*')
         """
         paginator = self.client.get_paginator('list_objects')
-        pages = paginator.paginate(Bucket=bucket, Prefix=prefix, **kwargs)
+        if prefix is None:
+            pages = paginator.paginate(Bucket=bucket, **kwargs)
+        else:
+            pages = paginator.paginate(Bucket=bucket, Prefix=prefix, **kwargs)
         tmp = []
         for page in pages:
             tmp.extend(page['Contents'])
