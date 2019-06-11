@@ -57,7 +57,7 @@ class Client:
         tmp = []
         for page in pages:
             # return None when no objects were found
-            if 'Contents' not in pages:
+            if 'Contents' not in page:
                 return None
 
             tmp.extend(page['Contents'])
