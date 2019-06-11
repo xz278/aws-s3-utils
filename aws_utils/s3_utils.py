@@ -56,6 +56,10 @@ class Client:
             pages = paginator.paginate(Bucket=bucket, Prefix=prefix, **kwargs)
         tmp = []
         for page in pages:
+            # return None when no objects were found
+            if 'Contents' not in pages:
+                return None
+
             tmp.extend(page['Contents'])
 
         objects = pd.DataFrame(tmp)
